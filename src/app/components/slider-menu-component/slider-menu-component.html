@@ -15,7 +15,7 @@
     class="carousel"
     [breakpoints]="breakpoints"
     >
-    @for(burger of dataBurgers(); track burger.titre) {
+    @for(burger of dataBurgers(); track burger.id) {
         <swiper-slide>
             <div class="card w-50">
                 <img [src]="burger.image_src">
