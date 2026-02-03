@@ -1,0 +1,21 @@
+<div class="container my-5 py-5">
+    <div class="row align-items-center">
+        @for (categorie of dataCategorie(); track categorie.nom) {
+            <div class="col-12 col-md-4">
+                <div class="card cardCategorie justify-content-center align-items-center mx-2"
+                [style.background-image]="'url(' + categorie.image_src + ')'"
+                >
+                <div class="pt-4 pb-1">
+                    <h4>{{ categorie.nom }}</h4>
+                    <p>{{ categorie.contenu }}</p>
+                    @if (categorie.nom == 'DRINKS') {
+                    <a href="#" class="readMoreBlack">READ MORE</a>
+                } @else{
+                    <a href="#" class="readMore">READ MORE</a>
+                }
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

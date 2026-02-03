@@ -1,0 +1,7 @@
+@use '../../../variables';
+
+.background {
+    background-image: url('../../../../public/images/header-bg.png');
+    background-size: cover;
+    background-position: bottom;
+}

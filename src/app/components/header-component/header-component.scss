@@ -1,0 +1,19 @@
+@use '../../../_variables';
+
+header {
+    background-image: url('../../../../public/images/header-bg.png');
+    background-size: cover;
+  nav {
+    #navbarContent {
+      a {
+        color: variables.$TextPrincipal;
+        font-size: 18px;
+      }
+      .active {
+        color: variables.$Jaune;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+}

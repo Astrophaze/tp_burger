@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'variables';
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/pagination';
+body {
+  background-color: variables.$BgPrimaire;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border-width: 1px; 
+  border-style: solid;
+  border-color: variables.$Jaune;
+  opacity: 1;
+}
+
+a {
+  &.readMore {
+    font-weight: 600;
+    font-size: 12px;
+    color: variables.$Jaune;
+    text-decoration: none;
+  }
+  &.readMoreBlack {
+    font-weight: 600;
+    font-size: 12px;
+    color: variables.$TextNoir;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: variables.$Roboto;
+}
+
+h2 {
+  color: variables.$Jaune;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+h3 {
+  color: variables.$TextPrincipal;
+  font-weight: 900;
+  font-size: 72px;
+}
+
+h4 {
+  color: variables.$Jaune;
+}
+
+.highlight {
+  color: variables.$Jaune;
+}
+
+p {
+  font-family: variables.$Arial;
+  color: variables.$TextPrincipal;
+  font-size: 18px;
+}
+
+.btnOrderNow {
+        color: variables.$TextNoir;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 18px;
+        padding: 5px 40px;
+        &.jaune{
+            background-color: variables.$Jaune;
+        }
+        &.orange{
+            background-color: variables.$Orange;
+        }
+      }

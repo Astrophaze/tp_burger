@@ -1,0 +1,29 @@
+@use '../../../variables';
+.bg {
+    background-color: variables.$BgSecondaire;
+    padding: 40px 0;
+    
+    swiper-container {
+        width: 100%;
+        height: auto;
+        
+        swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .card {
+                background-color: variables.$BgGrisLight;
+                border-radius: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

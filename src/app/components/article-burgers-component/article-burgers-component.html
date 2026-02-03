@@ -1,0 +1,13 @@
+<div class="bg my-5 py-5" [style.background-image]="'url(' + dataArticle().image_src + ')'" >
+    <div class="container">
+        <div class="row">
+            <div class="col-5 offset-7">
+                <h2>{{ dataArticle().titre }}</h2>
+                <hr>
+                <h3 [innerHTML]="dataArticle().sous_titre"></h3>
+                <hr>
+                <p class="mt-4">{{ dataArticle().contenu }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="w-75">
+                <h2>{{ dataArticle().titre }}</h2>
+                <hr>
+                <h3 [innerHTML]="dataArticle().sous_titre"></h3>
+                <hr>
+                <p class="mt-4">{{ dataArticle().contenu }}</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 image" [style.background-image]="'url(' + dataArticle().image_src + ')'">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+@use '../../../variables';
+.container {
+    .row {
+        .card {
+            border: none;
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            h4 {
+                font-weight: 600;
+            }
+            p {
+                color: variables.$TextPrincipal;
+                font-size: 20px;
+                font-family: variables.$Arial;
+            }
+        }
+    }
+}
