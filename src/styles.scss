@@ -16,6 +16,10 @@ hr {
   border-style: solid;
   border-color: variables.$Jaune;
   opacity: 1;
+  &.blanc {
+    border-color: variables.$TextPrincipal;
+    width: 75%;
+  }
 }
 
 a {
@@ -30,6 +34,12 @@ a {
     font-weight: 600;
     font-size: 12px;
     color: variables.$TextNoir;
+    text-decoration: none;
+  }
+  &.orderNow {
+    font-weight: 600;
+    font-size: 12px;
+    color: variables.$Jaune;
     text-decoration: none;
   }
 }
@@ -63,6 +73,7 @@ p {
   color: variables.$TextPrincipal;
   font-size: 18px;
 }
+
 
 .btnOrderNow {
         color: variables.$TextNoir;

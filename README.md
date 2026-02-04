@@ -1,59 +1,53 @@
-# TpBurger
+# Initier le projet TP_BURGER
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+## Pré-requis 
 
-## Development server
+- WSL
+- Git installé sur WSL
+- Node installé sur WSL
+- Angular CLI installé
 
-To start a local development server, run:
+## Récupérer le dépôt 
 
-```bash
-ng serve
+```
+git git@github.com:Astrophaze/tp_burger.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Puis, on va se rendre dans le dossier cloné avec 
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+cd tp_burger/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Et là on va supprimer le répertoire .git avec 
 
-```bash
-ng generate --help
+```
+rm -rf .git
 ```
 
-## Building
+Cette action permet de couper le lien entre mon dépôt et votre projet. Vous ne pourrez donc plus pousser vos modifications sur mon dépôt, il faudra alors exécuter la commande 
 
-To build the project run:
-
-```bash
-ng build
+```
+git init
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Et ensuite vous pourrez pousser autant de modifications que vous voudrez, mais cette fois, sur votre dépôt à vous. Vous devrez me rendre avant la fin de la journée un lien vers votre dépôt mis à jour avec votre travail du jour. 
 
-## Running unit tests
+## Démarrer le projet 
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Dans le répertoire du projet, executez
 
-```bash
-ng test
+```
+npm install
 ```
 
-## Running end-to-end tests
+Puis 
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+ng serve --open
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Vous devriez avoir votre projet qui s'ouvre sur le navigateur. Si ce n'est pas le cas, rendez vous sur [localhost:4200](http://localhost:4200/)
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Have fun :)

@@ -1,0 +1,58 @@
+<div class="container my-5 py-5" id="contact-us">
+  <div class="text-center mb-5">
+    <h2>{{ dataArticle().titre }}</h2>
+    <hr>
+    <h3 [innerHTML]="h3SousTitre"></h3>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-6">
+      <h4 class="mb-3">Ask us anything !</h4>
+      <form [formGroup]="formulaire" (ngSubmit)="envoyerFormulaire()">
+        <div class="row g-2 mb-2">
+          <div class="col-md-6">
+            <input type="text" formControlName="nom" placeholder="Votre nom..." class="champ">
+            @if (formulaire.get('nom')?.touched && formulaire.get('nom')?.hasError('required')) {
+              <small class="erreur">Nom requis</small>
+            }
+            @if (formulaire.get('nom')?.touched && formulaire.get('nom')?.hasError('minlength')) {
+              <small class="erreur">Nom trop court (minimum 3 caractères)</small>
+            }
+            @if (formulaire.get('nom')?.touched && formulaire.get('nom')?.hasError('maxlength')) {
+              <small class="erreur">Nom trop long (maximum 50 caractères)</small>
+            }
+          </div>
+          <div class="col-md-6">
+            <input type="email" formControlName="email" placeholder="Votre email..." class="champ">
+            @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('required')) {
+              <small class="erreur">Email requis</small>
+            }
+            @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('email')) {
+              <small class="erreur">Email invalide</small>
+            }
+            @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('maxlength')) {
+              <small class="erreur">Email trop long (maximum 50 caractères)</small>
+            }
+          </div>
+        </div>
+
+        <textarea formControlName="message" rows="4" placeholder="Votre message..." class="champ mb-3"></textarea>
+        @if (formulaire.get('message')?.touched && formulaire.get('message')?.hasError('required')) {
+          <small class="erreur d-block mb-2">Message requis</small>
+        }
+        @if (formulaire.get('message')?.touched && formulaire.get('message')?.hasError('minlength')) {
+          <small class="erreur d-block mb-2">Message trop court (minimum 10 caractères)</small>
+        }
+        @if (formulaire.get('message')?.touched && formulaire.get('message')?.hasError('maxlength')) {
+          <small class="erreur d-block mb-2">Message trop long (maximum 200 caractères)</small>
+        }
+        <button type="submit" [disabled]="formulaire.invalid" class="btn-orange">SEND</button>
+      </form>
+    </div>
+
+    <div class="col-md-4 offset-2">
+      <h4 class="mb-3">{{ dataArticle().sous_titre }}</h4>
+      <div class="text-white" [innerHTML]="dataArticle().contenu"></div>
+    </div>
+  </div>
+</div>

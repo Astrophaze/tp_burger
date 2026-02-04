@@ -1,0 +1,73 @@
+<footer class="py-5" id="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center">
+          <div class="col-5">
+            <img [src]="dataArticle().image_src" class="img-fluid" />
+          </div>
+          <div class="col-5">
+            <h5 class="">{{ dataArticle().sous_titre }}</h5>
+            <p>{{ dataArticle().contenu }}</p>
+            <a class="btnOrderNow jaune" [href]="dataArticle().href_lien">
+              {{ dataArticle().libelle_lien }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <h5 class="mb-4">USEFUL LINKS</h5>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a href="#header">Homepage</a></li>
+          <li class="mb-3"><a href="#about-us">About</a></li>
+          <li class="mb-3"><a href="#hot-deal">Hot Deals</a></li>
+          <li class="mb-3"><a href="#menu">Our Menu</a></li>
+          <li class="mb-3"><a href="#reviews">Reviews</a></li>
+          <li class="mb-3"><a href="#contact-us">Contact Form</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <div>
+            <h5>OUR NEWSLETTER</h5>
+            <p>Subscribe to our Newsletter and stay in touch with our newest offers!</p>
+            <form [formGroup]="formulaire" (ngSubmit)="envoyerNewsletter()">
+                <div class="input-group">
+                    <input class="form-control" formControlName="email" type="email" placeholder="Your @e-mail..."> <span><button type="submit" class="btn btnSend" [disabled]="formulaire.invalid">SEND</button></span>
+                </div>
+                @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('required')) {
+                    <small class="erreur">Email requis</small>
+                }
+                @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('email')) {
+                    <small class="erreur">Format d'email invalide</small>
+                }
+                @if (formulaire.get('email')?.touched && formulaire.get('email')?.hasError('maxLength')) {
+                    <small class="erreur">Email trop long (max 50 caractères)</small>
+                }
+                </form>
+            <small class="text-white fst-italic">Your e-mail is safe with us, we don't spam !</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center my-4">
+    <hr class="blanc">
+  </div>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="mx-2">
+        <img src="/images/icons/fb-icon.png">
+    </div>
+    <div class="mx-2">
+        <img src="/images/icons/x-icon.png">
+    </div>
+    <div class="mx-2">
+        <img src="/images/icons/instagram-icon.png">
+    </div>
+    <div class="mx-2">
+        <img src="/images/icons/yt-icon.png">
+    </div>
+  </div>
+  <div class="text-center mt-3">
+      <small class="text-white">&#169;Copyrights. All rights reserved</small>
+    </div>
+</footer>

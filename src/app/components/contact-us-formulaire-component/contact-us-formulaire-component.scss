@@ -1,0 +1,31 @@
+@use '../../../variables';
+
+.container {
+  font-family: variables.$Roboto;
+  .champ {
+    width: 100%;
+    background: variables.$BgGrisLight;
+    border: 1px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    &:focus { outline: none; border-color: variables.$Orange; }
+  }
+
+  .btn-orange {
+    background: variables.$Orange;
+    color: white;
+    border: none;
+    padding: 10px 45px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    &:disabled { background: #444; opacity: 0.5; }
+    &:hover:not(:disabled) { filter: brightness(1.2); }
+  }
+
+  .erreur { 
+    color: #ff4444; font-size: 0.75rem; 
+  }
+
+}

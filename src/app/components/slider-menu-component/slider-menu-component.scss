@@ -1,29 +1,55 @@
 @use '../../../variables';
+
 .bg {
-    background-color: variables.$BgSecondaire;
-    padding: 40px 0;
-    
-    swiper-container {
-        width: 100%;
-        height: auto;
+  background-color: variables.$BgSecondaire;
+  padding: 40px 0;
+
+  swiper-container {
+      --swiper-navigation-color: #{variables.$Jaune};
+    width: 100%;
+
+    swiper-slide {
+      display: flex;
+      justify-content: center;
+
+      .burger-item {
+        width: 50%;
         
-        swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            .card {
-                background-color: variables.$BgGrisLight;
-                border-radius: 35px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-                img {
-                    max-width: 100%;
-                    height: auto;
-                }
-            }
+        .image-wrapper {
+          background-color: variables.$BgGrisLight;
+          border-radius: 35px;
+          padding: 20px;
+          margin-bottom: 20px;
+
+          img {
+            max-width: 90%;
+            height: auto;
+          }
         }
+
+        .burger-info {
+
+          h5 {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+          }
+
+          p {
+            color: variables.$TextPrincipal;
+            font-size: 16px;
+            font-weight: 200;
+          }
+
+        }
+      }
     }
+  }
+  .btnViewMore {
+    background-color: variables.$Orange;
+    color: variables.$TextPrincipal;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+  }
 }

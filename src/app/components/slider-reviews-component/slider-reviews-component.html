@@ -1,0 +1,46 @@
+<div class="container text-center my-5" id="reviews">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2>REVIEWS</h2>
+        <hr class="border-warning opacity-100 mx-auto w-25" />
+        <h3 class="text-white" [innerHTML]="h3SousTitre"></h3>
+      </div>
+    </div>
+  </div>
+<div class="zone-temoignages py-5">
+  <swiper-container 
+    slides-per-view="1" 
+    navigation="true" 
+    pagination="true" 
+    loop="true" 
+    class="carrousel-avis pb-5">
+    
+    @for (review of dataSlider(); track review.id) {
+      <swiper-slide> <div class="review-content-wrapper d-flex align-items-center justify-content-center mx-auto">
+          
+          <img [src]="review.photo_src" class="review-photo rounded-circle"/>
+
+          <div class="bulle-avis position-relative p-4 rounded-4 text-white flex-grow-1">
+            <div class="d-flex justify-content-between">
+              <h5 class="fw-bold text-uppercase">{{ review.username }}</h5>
+              <small class="opacity-50">published on {{ review.published_at | date:'dd/MM/yyyy'}}</small>
+            </div>
+            
+            <div class="d-flex gap-1 my-2">
+              @for (etoile of [1,2,3,4,5]; track etoile) {
+                @if (etoile <= review.note) {
+                    <img src="images/star.png" class="etoile" />
+                } @else {
+                    <img src="images/star.png" class="etoile transparent" />
+                }
+}
+            </div>
+            
+            <p class="m-0 small opacity-75">{{ review.contenu }}</p>
+          </div>
+
+        </div>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>
