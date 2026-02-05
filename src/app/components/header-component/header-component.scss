@@ -1,13 +1,18 @@
 @use '../../../_variables';
 
 header {
-    background-image: url('../../../../public/images/header-bg.png');
-    background-size: cover;
+  background-image: url('../../../../public/images/header-bg.png');
+  background-size: cover;
   nav {
     #navbarContent {
       a {
         color: variables.$TextPrincipal;
         font-size: 18px;
+        transition: 200ms;
+        &:hover {
+          opacity: 0.8;
+          transform: translateY(-5px);
+      }
       }
       .active {
         color: variables.$Jaune;

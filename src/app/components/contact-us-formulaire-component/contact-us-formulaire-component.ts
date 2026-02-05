@@ -43,7 +43,6 @@ export class ContactUsFormulaireComponent {
 
   envoyerFormulaire() {
     if (this.formulaire.valid) {
-      // Créer un FormData au lieu d'envoyer l'objet brut
       const formData = new FormData();
       formData.append('nom', this.formulaire.get('nom')?.value);
       formData.append('email', this.formulaire.get('email')?.value);

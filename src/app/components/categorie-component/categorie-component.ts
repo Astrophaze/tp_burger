@@ -16,7 +16,6 @@ export class CategorieComponent {
     this.http.get<CategorieModel[]>('http://localhost:8080/categories.php').subscribe({
       next: (response) => {
         this.dataCategorie.set(response);
-        console.log(response);
       },
       error: (error) => console.error(error),
     });
