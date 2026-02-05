@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
 
-  envoyerFormulaire(formValues: any) {
+  envoyerFormulaire(formValues: FormData) {
     return this.http.post('http://localhost:8080/contact.php', formValues);
 }
 

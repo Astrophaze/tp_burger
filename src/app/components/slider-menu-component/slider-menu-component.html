@@ -1,7 +1,7 @@
 <div class="bg" id="menu">
   <div class="container text-center mb-5">
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-10">
         <h2>MENU</h2>
         <hr class="border-warning opacity-100 mx-auto w-25" />
         <h3 class="text-white" [innerHTML]="h3SousTitre"></h3>
@@ -9,29 +9,34 @@
     </div>
   </div>
 
-  <swiper-container
-  slides-per-view="3"
-  navigation="true"
-  loop="true"
-  class="carousel"
->
-  @for (burger of dataBurgers(); track burger.id) {
-    <swiper-slide>
-      <div class="burger-item">
-        <div class="image-wrapper d-flex justify-content-center align-items-center">
-          <img [src]="burger.image_src" [alt]="burger.titre" />
-        </div>
-        
-        <div class="burger-info">
-          <h5>{{ burger.titre }}</h5>
-          <p>{{ burger.contenu }}</p>
-          <a href="#" class="orderNow">ORDER NOW</a>
-        </div>
-      </div>
-    </swiper-slide>
+  @if (dataBurgers().length >= 3) {
+    <swiper-container
+      slides-per-view="3"
+      navigation="true"
+      loop="true"
+      class="carousel"
+      ref="swiperEl"
+    >
+      @for (burger of dataBurgers(); track burger.id) {
+        <swiper-slide class="d-flex justify-content-center">
+          <div class="burger-item">
+            <div class="image-wrapper d-flex justify-content-center align-items-center">
+              <img [src]="burger.image_src" [alt]="burger.titre" />
+            </div>
+
+            <div class="burger-info">
+              <h5>{{ burger.titre }}</h5>
+              <p>{{ burger.contenu }}</p>
+              <a href="#" class="orderNow">ORDER NOW</a>
+            </div>
+          </div>
+        </swiper-slide>
+      }
+    </swiper-container>
+  } @else if (dataBurgers().length > 0) {
+    <div class="d-flex justify-content-center"></div>
   }
-</swiper-container>
   <div class="text-center my-5">
-          <a href="#" class="btn btnViewMore w-25">VIEW MORE</a>
-    </div>
+    <a href="#" class="btn btnViewMore w-25">VIEW MORE</a>
+  </div>
 </div>

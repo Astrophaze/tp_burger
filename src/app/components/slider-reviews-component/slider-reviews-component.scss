@@ -18,13 +18,17 @@
 .carrousel-avis {
   --swiper-navigation-color: #{variables.$Jaune};
   --swiper-pagination-color: #{variables.$Jaune};
-  --swiper-pagination-bullet-size: 16px;
-  --swiper-pagination-bottom: 0px;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-horizontal-gap: 15px;
+  --swiper-pagination-bottom: -20px;
+  --swiper-pagination-bullet-inactive-color: transparent;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding-bottom: 60px;
 }
 
   .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
+    width: var(--swiper-pagination-bullet-size) !important;
+    height: var(--swiper-pagination-bullet-size) !important;
     background: transparent !important;
     border: 2px solid variables.$Jaune !important;
     opacity: 1 !important;
@@ -42,7 +46,7 @@
 }
 
 .review-content-wrapper {
-    max-width: 800px;
+    max-width: 900px;
     gap: 30px;
 }
 
@@ -50,4 +54,10 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
+}
+
+.container {
+  h3 {
+    
+  }
 }

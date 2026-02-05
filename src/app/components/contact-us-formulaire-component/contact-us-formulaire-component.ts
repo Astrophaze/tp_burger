@@ -49,8 +49,8 @@ export class ContactUsFormulaireComponent {
       formData.append('message', this.formulaire.get('message')?.value);
 
       this.apiService.envoyerFormulaire(formData).subscribe({
-        next: (res) => {
-          console.log('Succès !', res);
+        next: (response) => {
+          console.log('Succès !', response);
           this.formulaire.reset();
         },
         error: (err) => console.error("Erreur lors de l'envoi", err),
