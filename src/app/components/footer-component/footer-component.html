@@ -1,12 +1,14 @@
-<footer class="py-5" id="footer">
+<footer class="py-5 text-center text-md-start" id="footer">
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-6">
         <div class="row align-items-center">
-          <div class="col-5">
-            <img [src]="dataArticle().image_src" class="img-fluid" />
+          <div class="col-12 col-md-5">
+            <a href="#">
+              <img [src]="dataArticle().image_src" class="img-fluid" />
+            </a>
           </div>
-          <div class="col-5">
+          <div class="col-12 col-md-5 mt-2">
             <h5 class="">{{ dataArticle().sous_titre }}</h5>
             <p>{{ dataArticle().contenu }}</p>
             <a class="btnOrderNow jaune" [href]="dataArticle().href_lien">
@@ -16,16 +18,18 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-3 text-center text-md-start">
         <h5 class="mb-4">USEFUL LINKS</h5>
-        <ul class="list-unstyled">
-          <li class="mb-3"><a href="#header">Homepage</a></li>
-          <li class="mb-3"><a href="#about-us">About</a></li>
-          <li class="mb-3"><a href="#hot-deal">Hot Deals</a></li>
-          <li class="mb-3"><a href="#menu">Our Menu</a></li>
-          <li class="mb-3"><a href="#reviews">Reviews</a></li>
-          <li class="mb-3"><a href="#contact-us">Contact Form</a></li>
-        </ul>
+        <div class="text-center text-md-start">
+          <ul class="list-unstyled">
+            <li class="mb-3 linkFooter"><a href="#header">Homepage</a></li>
+            <li class="mb-3 linkFooter"><a href="#about-us">About</a></li>
+            <li class="mb-3 linkFooter"><a href="#hot-deal">Hot Deals</a></li>
+            <li class="mb-3 linkFooter"><a href="#menu">Our Menu</a></li>
+            <li class="mb-3 linkFooter"><a href="#reviews">Reviews</a></li>
+            <li class="mb-3 linkFooter"><a href="#contact-us">Contact Form</a></li>
+          </ul>
+        </div>
       </div>
       <div class="col-12 col-md-3">
         <div>

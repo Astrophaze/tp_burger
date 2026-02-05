@@ -6,13 +6,14 @@
         <h3 class="text-white" [innerHTML]="h3SousTitre"></h3>
       </div>
     </div>
-  </div>
+  
 <div class="zone-temoignages py-5">
-  <swiper-container 
-    slides-per-view="1" 
-    navigation="true" 
-    pagination="true" 
-    loop="true" 
+  @if (dataSlider().length >= 3) {
+  <swiper-container
+    slides-per-view="1"
+    navigation="true"
+    pagination="true"
+    loop="false"
     class="carrousel-avis pb-5">
     
     @for (review of dataSlider(); track review.id) {
@@ -31,7 +32,7 @@
                 @if (etoile <= review.note) {
                     <img src="images/star.png" class="etoile" />
                 } @else {
-                    <img src="images/star.png" class="etoile transparent" />
+                    <img src="images/star.png" class="etoile disabled" />
                 }
 }
             </div>
@@ -43,4 +44,8 @@
       </swiper-slide>
     }
   </swiper-container>
+} @else if (dataSlider().length > 0) {
+  <div class="d-flex justify-content-center"></div>
+}
+</div>
 </div>

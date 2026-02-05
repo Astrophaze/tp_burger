@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, signal, ViewChild } from '@angular/core';
 import { SliderMenuModel } from '../../models/slider-menu-model';
 
 @Component({
@@ -11,9 +11,12 @@ import { SliderMenuModel } from '../../models/slider-menu-model';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SliderMenuComponent {
+
+  
+  
   h3 = 'OUR #DELICIOUS BURGERS';
   h3SousTitre = this.h3.replace(/(#\S+)/g, '<span class="highlight">$1</span>');
-
+  
   breakpoints = {
     0: {
       slidesPerView: 1
@@ -29,12 +32,30 @@ export class SliderMenuComponent {
   dataBurgers = signal<SliderMenuModel[]>([]);
 
   constructor(private http: HttpClient) {
-
+    
     this.http.get<SliderMenuModel[]>('http://localhost:8080/burgers.php').subscribe({
-          next: (response) => {
-            this.dataBurgers.set(response);
-          },
-          error: (error) => console.error(error),
-        });
+      next: (response) => {
+        this.dataBurgers.set(response);
+      },
+      error: (error) => console.error(error),
+    });
   }
+  @ViewChild('swiper') swiper!: ElementRef<any>;
+
+  
+
+      ngAfterViewInit() {
+        const slidesCount = this.dataBurgers().length;
+        const maxSlidesPerView = 3;
+        // swiper parameters
+        const swiperParams = {
+          slidesPerView: 3,
+          navigation: true,
+          loop: slidesCount > maxSlidesPerView,
+          loopAdditionalSlides: 5,
+          breakpoints: this.breakpoints
+        };
+        Object.assign(this.swiper.nativeElement, swiperParams);
+        this.swiper.nativeElement.initialize();
+      }
 }
